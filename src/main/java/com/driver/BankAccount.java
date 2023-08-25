@@ -1,5 +1,8 @@
 package com.driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankAccount {
 
     private String name;
@@ -23,25 +26,24 @@ public class BankAccount {
         //Each digit of an account number can lie between 0 and 9 (both inclusive)
         //Generate account number having given number of 'digits' such that the sum of digits is equal to 'sum'
         //If it is not possible, throw "Account Number can not be generated" exception
-//        if (digits * 9 < sum) {
-//            throw new Exception("Account Number can not be generated");
-//        }
-//        List<Integer> accNum = new ArrayList<>();
-//        while (digits-- > 0) {
-//            if (sum >= 9) {
-//                sum -= 9;
-//                accNum.add(9);
-//            } else if (sum != 0) {
-//                accNum.add(sum);
-//                sum = 0;
-//            } else accNum.add(0);
-//        }
-//        StringBuilder sb = new StringBuilder();
-//        for (int i : accNum) {
-//            sb.append(i);
-//        }
-//        return sb.toString();
-        return "a";
+        if (digits * 9 < sum) {
+            throw new Exception("Account Number can not be generated");
+        }
+        List<Integer> accNum = new ArrayList<>();
+        while (digits-- > 0) {
+            if (sum >= 9) {
+                sum -= 9;
+                accNum.add(9);
+            } else if (sum != 0) {
+                accNum.add(sum);
+                sum = 0;
+            } else accNum.add(0);
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i : accNum) {
+            sb.append(i);
+        }
+        return sb.toString();
     }
 
     public void deposit(double amount) {
