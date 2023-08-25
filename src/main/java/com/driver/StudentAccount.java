@@ -9,9 +9,6 @@ public class StudentAccount extends BankAccount {
         this.institutionName = institutionName;
     }
 
-    public StudentAccount() {
-    }
-
     public String getInstitutionName() {
         return institutionName;
     }
