@@ -16,8 +16,8 @@ public class CurrentAccount extends BankAccount {
         if (balance < 5000) throw new Exception("Insufficient Balance");
     }
 
-    public CurrentAccount() {
-    }
+//    public CurrentAccount() {
+//    }
 
     public void validateLicenseId() throws Exception {
         // A trade license Id is said to be valid if no two consecutive characters are same
@@ -83,5 +83,5 @@ public class CurrentAccount extends BankAccount {
             return this.freq - o.freq;
         }
     }
-    
+
 }
