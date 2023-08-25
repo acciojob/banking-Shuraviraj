@@ -9,10 +9,6 @@ public class BankAccount {
     private double balance;
     private double minBalance;
 
-//    public BankAccount(String name, double balance, double minBalance) {
-//
-//    }
-
     public BankAccount(String name, double balance, double minBalance) {
         this.name = name;
         this.balance = balance;
@@ -53,8 +49,11 @@ public class BankAccount {
 
     public void withdraw(double amount) throws Exception {
         // Remember to throw "Insufficient Balance" exception, if the remaining amount would be less than minimum balance
-        if (balance - amount < minBalance) throw new Exception("Insufficient Balance");
-        else if (amount >= 0) balance -= amount;
+        if (amount >= 0) {
+            double rem = balance - amount;
+            if (rem < minBalance) throw new Exception("Insufficient Balance");
+            balance -= amount;
+        }
     }
 
     public String getName() {
